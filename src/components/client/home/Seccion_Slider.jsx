@@ -14,9 +14,9 @@ const Seccion_Slider = () => {
   useEffect(() => {
     const fetchSlides = async () => {
       const { data, error } = await supabase
-        .from("slider_home")
+        .from("slider")
         .select("*")
-        .eq("estado", true)
+        .eq("estado", "activo")
         .order("orden", { ascending: true });
 
       if (error) console.error("Error al traer slides:", error);

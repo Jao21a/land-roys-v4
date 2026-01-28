@@ -3,7 +3,7 @@ import { supabase } from "../api/Supabase.provider";
 // Obtener slides ordenadas
 export const getSlides = async () => {
   const { data, error } = await supabase
-    .from("slider_home")
+    .from("slider")
     .select("*")
     .order("orden", { ascending: true });
 
@@ -14,7 +14,7 @@ export const getSlides = async () => {
 // Actualizar slide individual
 export const updateSlide = async (id, payload) => {
   const { error } = await supabase
-    .from("slider_home")
+    .from("slider")
     .update(payload, { returning: "representation" })
     .eq("id", id);
 
@@ -31,7 +31,7 @@ export const reorderSlides = async (slides) => {
   slides.forEach((s, index) => (s.orden = index));
 
   const { data, error } = await supabase
-    .from("slider_home")
+    .from("slider")
     .upsert(
       slides.map(s => ({ id: s.id, orden: s.orden })),
       { onConflict: ["id"], returning: "representation" }
@@ -44,7 +44,7 @@ export const reorderSlides = async (slides) => {
 // Agregar slide (máximo 5)
 export const addSlide = async (slide) => {
   const { data: existingSlides, error: fetchError } = await supabase
-    .from("slider_home")
+    .from("slider")
     .select("id")
     .order("orden", { ascending: true });
 
@@ -53,7 +53,7 @@ export const addSlide = async (slide) => {
   if (existingSlides.length >= 5) throw new Error("No se pueden agregar más de 5 slides");
 
   const { data, error } = await supabase
-    .from("slider_home")
+    .from("slider")
     .insert([slide])
     .select()
     .single();

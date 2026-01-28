@@ -1,6 +1,7 @@
 // src/context/AuthContext.jsx
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { supabase } from "../api/Supabase.provider";
+import Loader from "../components/common/Loader";
 
 const AuthContext = createContext(null);
 
@@ -9,6 +10,7 @@ export const AuthProvider = ({ children }) => {
   const [role, setRole] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // Función para cargar rol
   // Función para cargar rol
   const loadRole = async (userId) => {
     try {
@@ -97,7 +99,7 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider value={{ user, role, login, logout, loading }}>
-      {loading ? <div>Cargando...</div> : children}
+      {loading ? <Loader /> : children}
     </AuthContext.Provider>
   );
 };

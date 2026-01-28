@@ -10,6 +10,10 @@ import {
     ChevronLeft,
     ChevronRight,
     Images,
+    Wrench,
+    Tag,
+    Calendar,
+    Settings as SettingsIcon,
 } from "lucide-react";
 
 const SidebarAdministrativo = () => {
@@ -28,8 +32,28 @@ const SidebarAdministrativo = () => {
         },
         {
             icon: <Box size={22} />,
-            label: "Inventario",
+            label: "Inventario (Motos)",
             path: "/admin/inventario",
+        },
+        {
+            icon: <Wrench size={22} />,
+            label: "Repuestos",
+            path: "/admin/repuestos",
+        },
+        {
+            icon: <Tag size={22} />,
+            label: "Promociones",
+            path: "/admin/promociones",
+        },
+        {
+            icon: <Calendar size={22} />,
+            label: "Eventos",
+            path: "/admin/eventos",
+        },
+        {
+            icon: <SettingsIcon size={22} />,
+            label: "Configuración",
+            path: "/admin/configuracion",
         },
         {
             icon: <CircleDollarSign size={22} />,

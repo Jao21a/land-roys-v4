@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { User, Lock, Bike } from "lucide-react";
+import { User, Lock } from "lucide-react";
 import { useAuth } from "../../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import logo from "../../../assets/images/logo.png";
 
 const MySwal = withReactContent(Swal);
 
@@ -42,9 +43,9 @@ const Login = () => {
             <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md border border-gray-100">
                 {/* Logo */}
                 <div className="flex flex-col items-center mb-8">
-                    <div className="flex items-center gap-2 text-yellow-500">
-                        <Bike size={40} strokeWidth={2.5} />
-                        <span className="text-3xl font-bold tracking-tight">Land Roys</span>
+                    <div className="flex flex-col items-center gap-2 text-yellow-500">
+                        <img src={logo} alt="Land Roys" className="h-24 w-auto object-contain" />
+                        <span className="text-3xl font-bold tracking-tight text-black">Land Roys</span>
                     </div>
                 </div>
 

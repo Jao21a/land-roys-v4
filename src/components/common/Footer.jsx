@@ -1,5 +1,6 @@
-import { Bike, Facebook, Instagram, Twitter, Mail, MapPin, Phone } from 'lucide-react';
-import { Link } from 'react-router-dom'; // <-- Importamos Link
+import { Facebook, Instagram, Twitter, Mail, MapPin, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import logo from '../../assets/images/logo.png';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -12,9 +13,7 @@ const Footer = () => {
                     {/* Columna 1: Branding y Redes */}
                     <div className="col-span-1 md:col-span-1">
                         <div className="flex items-center gap-2 mb-6">
-                            <div className="bg-yellow-400 p-1.5 rounded-lg shadow-sm">
-                                <Bike size={24} className="text-black" />
-                            </div>
+                            <img src={logo} alt="Land Roys" className="h-12 w-auto object-contain" />
                             <span className="text-xl font-bold tracking-tighter text-gray-900">
                                 Land <span className="text-yellow-500">Roys</span>
                             </span>
