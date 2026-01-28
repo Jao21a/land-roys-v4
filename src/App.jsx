@@ -23,6 +23,9 @@ import InventorySpares from "./pages/admin/spares/InventorySpares";
 import Promotions from "./pages/admin/promotions/Promotions";
 import Events from "./pages/admin/events/Events";
 import Settings from "./pages/admin/settings/Settings";
+import Clients from "./pages/admin/clients/Clients";
+import Sales from "./pages/admin/sales/Sales";
+import Reports from "./pages/admin/reports/Reports";
 
 function App() {
   return (
@@ -56,6 +59,9 @@ function App() {
             <Route path="promociones" element={<Promotions />} />
             <Route path="eventos" element={<Events />} />
             <Route path="configuracion" element={<Settings />} />
+            <Route path="clientes" element={<Clients />} />
+            <Route path="ventas" element={<Sales />} />
+            <Route path="reportes" element={<Reports />} />
             <Route path="slider_gestion" element={<Slider />} />
           </Route>
         </Routes>
